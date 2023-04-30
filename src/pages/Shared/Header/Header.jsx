@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../assets/logo.png'
 import moment from 'moment';
 import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
+
     return (
         <Container>
             <div className="text-center">
@@ -22,23 +26,29 @@ const Header = () => {
                 </Marquee>
             </div>
 
-            <Navbar className='my-3' collapseOnSelect expand="lg" bg="light" variant="light">
+            <Navbar className='mb-4' collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto fw-semibold">
                             <Nav.Link href="#home">
-                                <Link to="/">Home</Link>
+                                <Link className='text-secondary text-decoration-none' to="/">Home</Link>
                             </Nav.Link>
 
                             <Nav.Link href="#about">About</Nav.Link>
-                            
+
                             <Nav.Link href="#career">Career</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link className='mt-1 fw-semibold' href="#profile">Profile</Nav.Link>
+                            {user && <Nav.Link className='fw-semibold' href="#profile">
+                                <FaUserCircle className='fs-1' />
+                            </Nav.Link>}
+
                             <Nav.Link eventKey={2} href="#memes">
-                                <Button className='py-1' variant="secondary">Log In</Button>
+                                {user ?
+                                    <Button className='py-1' variant="secondary">Log Out</Button> :
+                                    <Link to="/login"><Button className='py-1' variant="secondary">Log In</Button></Link>
+                                }
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
