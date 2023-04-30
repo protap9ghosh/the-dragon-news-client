@@ -15,7 +15,7 @@ const Header = () => {
             </div>
 
             <div className='d-flex my-4 p-2 rounded-1 bg-info bg-opacity-10'>
-                <Button variant="danger">Latest</Button>
+                <Button className='rounded-1 py-1' variant="danger">Latest</Button>
                 <Marquee className='text-danger' speed={70} pauseOnHover={true}>
                     <span className='me-5'>Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine...<Link>Read More</Link></span>
                     <span className='me-5'>US to name military mission in Ukraine and appoint commander - WSJ...<Link>Read More</Link></span>
@@ -27,8 +27,12 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto fw-semibold">
-                            <Nav.Link href="#home">Home</Nav.Link>
+                            <Nav.Link href="#home">
+                                <Link to="/">Home</Link>
+                            </Nav.Link>
+
                             <Nav.Link href="#about">About</Nav.Link>
+                            
                             <Nav.Link href="#career">Career</Nav.Link>
                         </Nav>
                         <Nav>
