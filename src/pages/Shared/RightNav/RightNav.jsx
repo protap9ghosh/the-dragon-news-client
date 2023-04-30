@@ -21,7 +21,9 @@ const RightNav = () => {
                     <ListGroup.Item action variant="info" href="https://www.twitter.com"> <FaTwitter /> Twitter</ListGroup.Item>
                     <ListGroup.Item action variant="danger" href="https://www.instagram.com"> <FaInstagram /> Instagram</ListGroup.Item>
                 </ListGroup>
+                
                 <QZone></QZone>
+
                 <div className='position-relative text-white text-center'>
                     <img src={bg} alt="" />
                     <div className='position-absolute top-0 pt-4 mt-5 px-4'>

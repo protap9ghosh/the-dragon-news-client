@@ -3,12 +3,13 @@ import logo from '../../../assets/logo.png'
 import moment from 'moment';
 import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <Container>
             <div className="text-center">
-                <img className='mt-4 mb-3' src={logo} alt="" />
+                <Link><img className='mt-4 mb-3' src={logo} alt="" /></Link>
                 <p className='text-secondary fs-5'><small>Journalism Without Fear or Favour</small></p>
                 <p>{moment().format("dddd, MMMM Do YYYY, h:mm A")}</p>
             </div>
