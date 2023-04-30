@@ -26,13 +26,13 @@ const Header = () => {
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mx-auto">
+                        <Nav className="mx-auto fw-semibold">
                             <Nav.Link href="#home">Home</Nav.Link>
                             <Nav.Link href="#about">About</Nav.Link>
                             <Nav.Link href="#career">Career</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#profile" className='mt-1'>Profile</Nav.Link>
+                            <Nav.Link className='mt-1 fw-semibold' href="#profile">Profile</Nav.Link>
                             <Nav.Link eventKey={2} href="#memes">
                                 <Button className='py-1' variant="secondary">Log In</Button>
                             </Nav.Link>
