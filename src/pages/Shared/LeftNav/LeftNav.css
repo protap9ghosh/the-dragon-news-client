@@ -1,0 +1,18 @@
+.all-category {
+    padding: 8px 0;
+    margin: 0;
+}
+
+.all-category:hover {
+    border-radius: 5px;
+    background-color: rgba(119, 136, 153, 0.171);
+}
+
+.category-name {
+    margin-left: 35px;
+    transition: .2s;
+}
+
+.category-name:hover {
+    color: black !important;
+}
