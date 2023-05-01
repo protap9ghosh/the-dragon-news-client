@@ -15,7 +15,7 @@ const Header = () => {
                 <p>{moment().format("dddd, MMMM Do YYYY, h:mm A")}</p>
             </div>
 
-            <div className='d-flex p-2 rounded-1 bg-info bg-opacity-10'>
+            <div className='d-flex mb-4 p-2 rounded-1 bg-info bg-opacity-10'>
                 <Button className='rounded-1 py-1' variant="danger">Latest</Button>
                 <Marquee className='text-danger' speed={70} pauseOnHover={true}>
                     <span className='me-5'>Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine...<Link>Read More</Link></span>
