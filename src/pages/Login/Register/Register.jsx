@@ -1,20 +1,43 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+
+    const handleRegister = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, photo, email, password);
+
+        createUser(email, password)
+            .then(result => {
+                const createUser = result.user;
+                console.log(createUser);
+                form.reset();
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <Container>
-            <Form className='w-50 mx-auto border pt-4 px-5 pb-4 mb-5 rounded shadow'>
+            <Form onSubmit={handleRegister} className='w-50 mx-auto border pt-4 px-5 pb-4 mb-5 rounded shadow'>
                 <h3 className='text-center'>Register your account</h3>
                 <hr className='mt-4 mb-5 text-secondary' />
-                
-                <Form.Group className="my-3" controlId="formBasicEmail">
+
+                <Form.Group className="my-3">
                     <Form.Label className='fw-bold'>Your Name</Form.Label>
                     <Form.Control type="text" name="name" placeholder="Your Name" required />
                 </Form.Group>
-                
-                <Form.Group className="my-3" controlId="formBasicEmail">
+
+                <Form.Group className="my-3">
                     <Form.Label className='fw-bold'>Photo URL</Form.Label>
                     <Form.Control type="text" name="photo" placeholder="Photo URL" required />
                 </Form.Group>
