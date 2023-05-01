@@ -9,7 +9,7 @@ const NavigationBar = () => {
 
     return (
         <Container>
-            <Navbar className='mb-4' collapseOnSelect expand="lg" bg="light" variant="light">
+            <Navbar className='my-4' collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -24,9 +24,9 @@ const NavigationBar = () => {
                             }
 
                             {user ?
-                                <Button className='ms-3' variant="secondary">Log Out</Button> :
+                                <Button className='ms-3 rounded-1' variant="dark">Log Out</Button> :
                                 <Link to="/login">
-                                    <Button className='py-1' variant="secondary">Log In</Button>
+                                    <Button className='rounded-1' variant="dark">Log In</Button>
                                 </Link>
                             }
                         </Nav>
